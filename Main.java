@@ -1,4 +1,3 @@
-import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
@@ -64,14 +63,14 @@ public class Main {
         useColors = answer.equals("igen") || answer.equals("i") || answer.equals("y");
 
         System.out.println("Ez a program dzsinn megmondja, hogy milyen esélyed van " +
-                TopicColor.PIROS.colorize("PIROS", useColors) + " - " +
-                TopicColor.SÁRGA.colorize("SÁRGA", useColors) + " - " +
-                TopicColor.ZÖLD.colorize("ZÖLD", useColors) + " - " +
+                TopicColor.RED.colorize("PIROS", useColors) + " - " +
+                TopicColor.YELLOW.colorize("SÁRGA", useColors) + " - " +
+                TopicColor.GREEN.colorize("ZÖLD", useColors) + " - " +
                 "tételeket húzni!\n");
 
-        System.out.println(TopicColor.PIROS.colorize("PIROS: ", useColors) +"nagyon rossz tétel, 2-es kiszenvedése");
-        System.out.println(TopicColor.SÁRGA.colorize("SÁRGA: ", useColors) +"nem rossz, de nem is jó tétel");
-        System.out.println(TopicColor.ZÖLD.colorize("ZÖLD: ", useColors) +"kifejezetten jó tétel\n");
+        System.out.println(TopicColor.RED.colorize("PIROS: ", useColors) +"nagyon rossz tétel, 2-es kiszenvedése");
+        System.out.println(TopicColor.YELLOW.colorize("SÁRGA: ", useColors) +"nem rossz, de nem is jó tétel");
+        System.out.println(TopicColor.GREEN.colorize("ZÖLD: ", useColors) +"kifejezetten jó tétel\n");
 
         System.out.println("Most pedig add meg, hogy mennyi tételed van! Az összes tételszámnak összesen 27-nek kell lennie.\n");
     }
@@ -99,13 +98,13 @@ public class Main {
 
         while (true) {
             try {
-                System.out.print(TopicColor.PIROS.colorize("PIROS darabszám: ", useColors));
+                System.out.print(TopicColor.RED.colorize("PIROS darabszám: ", useColors));
                 values.put("PIROS", sc.nextInt());
 
-                System.out.print(TopicColor.SÁRGA.colorize("SÁRGA darabszám: ", useColors));
+                System.out.print(TopicColor.YELLOW.colorize("SÁRGA darabszám: ", useColors));
                 values.put("SÁRGA", sc.nextInt());
 
-                System.out.print(TopicColor.ZÖLD.colorize("ZÖLD darabszám: ", useColors));
+                System.out.print(TopicColor.GREEN.colorize("ZÖLD darabszám: ", useColors));
                 values.put("ZÖLD", sc.nextInt());
 
                 if (values.get("PIROS") + values.get("SÁRGA") + values.get("ZÖLD") == 27) {
@@ -154,9 +153,9 @@ public class Main {
      * */
     private static void getInformation(HashMap<String, Integer> topicsColored, int iterations) {
         System.out.println("\n------------------------------");
-        System.out.println(TopicColor.PIROS.colorize("-PIROS: ", useColors) + topicsColored.get("PIROS") + " db\t\t\t\t-");
-        System.out.println(TopicColor.SÁRGA.colorize("-SÁRGA: ", useColors) + topicsColored.get("SÁRGA") + " db\t\t\t\t-");
-        System.out.println(TopicColor.ZÖLD.colorize("-ZÖLD: ", useColors)  + topicsColored.get("ZÖLD") + " db\t\t\t\t-");
+        System.out.println(TopicColor.RED.colorize("-PIROS: ", useColors) + topicsColored.get("PIROS") + " db\t\t\t\t-");
+        System.out.println(TopicColor.YELLOW.colorize("-SÁRGA: ", useColors) + topicsColored.get("SÁRGA") + " db\t\t\t\t-");
+        System.out.println(TopicColor.GREEN.colorize("-ZÖLD: ", useColors)  + topicsColored.get("ZÖLD") + " db\t\t\t\t-");
         System.out.println("-A szimuláció ennyiszer fog futni: " + iterations);
         System.out.println("------------------------------");
     }
